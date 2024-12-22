@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import React from 'react'
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { LanguageParams } from '../../templates';
 
 export const Options = () => {
     const [options, setOptions] = useState({one: false, two: false, three: false})
@@ -25,11 +28,13 @@ export const Options = () => {
         { size: '5XL', cm: '48-51.5', inch: '18.9-20.3' },
       ];
 
+      const { t } = useTranslation();
+      const { lng } = useParams<LanguageParams>();
     return(
         <div className="navigation__options">
             <div className={`navigation__options-button ${options.one ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "one" })}>Size guide</p>
-                <img style={{transform: options.one ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="./images/arrow.png" alt="" />
+                <p onClick={() => handleClick({ el: "one" })}>{t('option1')}</p>
+                <img style={{transform: options.one ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <table>
                         <thead>
@@ -52,26 +57,20 @@ export const Options = () => {
                 </div>
             </div>
             <div className={`navigation__options-button ${options.two ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "two" })}>How to measure</p>
-                <img style={{transform: options.two ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="./images/arrow.png" alt="" />
+                <p onClick={() => handleClick({ el: "two" })}>{t('option2')}</p>
+                <img style={{transform: options.two ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <span>
-                        Measure the circumference of your knee joint with your leg out straight, keeping your muscles relaxed. Measure around the centre of your kneecap (at the patella), and around the thickest part of your calf. If your calf is more than 4cm (1.6in) larger than your knee, then you may wish to size up to ensure a good fit.
-                        <br/><br/>
-                        If you want a tight fit best suited to powerlifting and squatting, we recommend sizing down. A regular fitting knee sleeve will be snug.
-                        <br/><br/>
-                        If you are new to wearing knee sleeves we recommend going with the recommended fit instead of sizing down, especially if you fall on size medium or smaller.
+                        {t('option2Text')}
                     </span>
                 </div>
             </div>
-            <div className={`navigation__options-button ${options.three ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "three" })}>care instructions</p>
-                <img style={{transform: options.three ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="./images/arrow.png" alt="" />
+            <div className={`navigation__options-button ${lng === "ua" ? "optionUa" : ""} ${options.three ? "activeOption" : ""}`}>
+                <p onClick={() => handleClick({ el: "three" })}>{t('option3')}</p>
+                <img style={{transform: options.three ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <span>
-                        We recommend hand washing your knee sleeves with water or a mild detergent (or a specialist neoprene/wetsuit detergent), then allow the sleeves to air dry standing up.
-                        <br/><br/>
-                        The spin cycle of a washing machine can damage the sleeve, as the knee sleeves become quite bulky when wet and can potentially get caught up or damaged by wringing. High heat from a washing machine or a dryer will degrade the rubber in the sleeves (potentially causing shrinkage or brittleness).
+                        {t('option3Text')}
                     </span>
                 </div>
             </div>

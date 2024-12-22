@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { useTranslation } from 'react-i18next';
 
 export const TotalInfo = () => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -40,14 +41,16 @@ export const TotalInfo = () => {
         }
     };
 
+    const { t } = useTranslation();
+
     return (
         <section className="totalInfo">
             <div className="totalInfo-amount">
-                <h4>Subtotal</h4>
+                <h4>{t('cartInfoTitle')}</h4>
                 <span className="price">${totalPrice}</span>
             </div>
-            <button className="totalInfo-checkOut" onClick={handleCheckout}>Check Out</button>
-            <span className="totalInfo-text">Shipping, taxes, and discount codes calculated at checkout.</span>
+            <button className={`totalInfo-checkOut ${cart.length === 0 ? "disabledButton" : ""}`} onClick={handleCheckout}>{t('cartSend')}</button>
+            <span className="totalInfo-text">{t('cartInfoText')}</span>
         </section>
     );
 };

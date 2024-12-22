@@ -1,30 +1,40 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import AnimateLayout from '../../hooks/animateLayout';
+
+import { useTranslation } from 'react-i18next';
+import { LanguageParams } from '../../templates';
 
 export const Greeting =() => {
+
+    const { t } = useTranslation()
+    const { lng } = useParams<LanguageParams>();
 
     return(
         <section className="greeting">
             <div className="greeting__content container">
                 <div className="greeting__content-info">
                     <div className="greeting__content-info-top">
-                        <span className="underTitle">make your</span>
-                        <h1 className="title">
-                            Body stronger
+                        <span className="underTitle">{t('underTitle')}</span>
+                        <h1 className={`title ${lng === "ua" ? "uaTitle" : ""}`}>
+                            {t('title')}
                         </h1>
                         <p className="subTitle">
-                            Elevate your training with the ultimate knee protection.
+                            {t('subTitle')}
                         </p>
                     </div>
                     <div className="greeting__content-info-bottom">
                         <span className="greeting-text">
-                            Order SBD knee sleeves now and get a free keychain! <br/>Don't miss out on this limited-time offer!
+                            {t('greetingText')}
                         </span>
-                        <button className="greeting-button">
-                            Buy Now
-                        </button>
+                        <Link style={{maxWidth: lng === "ua" ? "275px" : "210px"}} to={`/${lng}/product`} className="greeting-button">
+                            {t('greetingButton')}
+                        </Link>
                     </div>
                 </div>
-                {/* <img className="greeting__content-image" src="./images/product.png" alt="product" /> */}
+                <AnimateLayout>
+                    <img className="greeting__content-image" src="../images/product.png" alt="product" />
+                </AnimateLayout>
             </div>
         </section>
     )

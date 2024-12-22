@@ -19,7 +19,7 @@ export const ProductGalery = () => {
             <ul className="product__galery-list">
                 {[1,2,3,4,5].map(el =>
                     <li onClick={() => setImageIndex(el)} className="product__galery-list-image">
-                        <img src={`./images/galery/image-${el}.png`} alt={`image-${el}`} />
+                        <img src={`../images/galery/image-${el}.png`} alt={`image-${el}`} />
                     </li>
                 )}
             </ul>
@@ -27,12 +27,12 @@ export const ProductGalery = () => {
                 <Slider {...settings}>
                 {[1,2,3,4,5].map(el =>
                     <li className="product__galery-mobileList-image">
-                        <img src={`./images/galery/image-${el}.png`} alt={`image-${el}`} />
+                        <img src={`../images/galery/image-${el}.png`} alt={`image-${el}`} />
                     </li>
                 )}
                 </Slider>
             </ul>
-            <img className="product__galery-mainImage" src={`./images/galery/image-${imageIndex}.png`} alt="image" />
+            <img className="product__galery-mainImage" src={`../images/galery/image-${imageIndex}.png`} alt="image" />
         </section>
     )
 }

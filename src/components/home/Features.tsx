@@ -1,15 +1,22 @@
 import React from 'react';
+import AnimationSwapBlock from '../../hooks/animationSwapBlock';
+import { useTranslation } from 'react-i18next';
 
 export const Features = () => {
+
+    const { t } = useTranslation()
+
     return(
         <section className="features">
             <div className="features__row">
                 <div className="features__row-black ring-one">
-                    <div className="features__row-black-info">
-                        <h2 className="second-title">Premium Quality Materials</h2>
-                        <p className="second-subTitle">Engineered for Durability and Long-Lasting Performance</p>
-                        <span className="main-text">These knee sleeves are crafted from reinforced, high-quality materials designed to withstand the rigors of heavy training. They offer unmatched durability and reliability, ensuring long-term use without compromising on performance.</span>
-                    </div>
+                    <AnimationSwapBlock position={-100}>
+                        <div className="features__row-black-info">
+                            <h2 className="second-title">{t('featuresTitle1')}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle1')}</p>
+                            <span className="main-text">{t('featuresText1')}</span>
+                        </div>
+                    </AnimationSwapBlock>
                 </div>
                 <div className="features__row-white bdW-1">
                     {/* img */}
@@ -20,20 +27,24 @@ export const Features = () => {
                     {/* img */}
                 </div>
                 <div className="features__row-black ring-two">
-                    <div className="features__row-black-info">
-                        <h2 className="second-title">Perfect Fit & Comfort</h2>
-                        <p className="second-subTitle">Ergonomically Designed for a Snug and Comfortable Fit</p>
-                        <span className="main-text">The knee sleeves contour perfectly to your body, ensuring a tight yet comfortable fit that won't slip, slide, or restrict movement. This ergonomic design allows you to train longer and harder without discomfort.</span>
-                    </div>
+                    <AnimationSwapBlock position={100}>
+                        <div className="features__row-black-info">
+                            <h2 className="second-title">{t('featuresTitle2')}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle2')}</p>
+                            <span className="main-text">{t('featuresText2')}</span>
+                        </div>
+                    </AnimationSwapBlock>
                 </div>
             </div>
             <div className="features__row">
                 <div className="features__row-black ring-three">
-                    <div className="features__row-black-info">
-                        <h2 className="second-title">Athlete Approved</h2>
-                        <p className="second-subTitle">Trusted by Top Athletes Worldwide</p>
-                        <span className="main-text">Used by elite athletes, powerlifters, and CrossFit champions, these knee sleeves are proven to enhance strength and performance. Trusted globally, they offer the confidence needed to push your limits safely.</span>
-                    </div>
+                    <AnimationSwapBlock position={-100}>
+                        <div className="features__row-black-info">
+                            <h2 className="second-title">{t('featuresTitle3')}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle2')}</p>
+                            <span className="main-text">{t('featuresText3')}</span>
+                        </div>
+                    </AnimationSwapBlock>
                 </div>
                 <div className="features__row-white bdW-3">
                     {/* img */}

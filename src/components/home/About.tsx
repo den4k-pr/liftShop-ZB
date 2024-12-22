@@ -1,4 +1,7 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link, useParams } from 'react-router-dom';
+import { LanguageParams } from '../../templates';
 
 export const About = () => {
 
@@ -14,9 +17,12 @@ export const About = () => {
         "Perfect Fit Design",
     ]
 
+    const { t } = useTranslation();
+    const { lng } = useParams<LanguageParams>();
+
     return(
         <section className="about">
-            {/* <img className="about-ring" src="./images/ring.svg" alt="ring" /> */}
+
             <div className="about__line">
                 <ul className="about__line-list">
                     {arrowOfSentences.map((text, index) => (
@@ -26,17 +32,15 @@ export const About = () => {
             </div>
             <div className="about__content">
                 <div className="about__content-iproduct">
-                    {/* <img className="about__content-iproduct-image" src="./images/product.png" alt="product" /> */}
+                    {/* image */}
                 </div>
                 <div className="about__content-info">
                     <div className="info-body">
-                        <h2 className="second-title">Choosing the Right Knee Sleeves</h2>
+                        <h2 className="second-title">{t('aboutTitle')}</h2>
                         <p className="main-text">
-                            Choosing the right gear is essential for safety and performance. Knee sleeves are more than just an accessory—they provide crucial support and stability during workouts. 
-                            Whether lifting heavy, squatting, or doing cardio, they protect your joints, enhance performance, and reduce injury risk. <br/><br/>
-                            Opt for knee sleeves that balance comfort, durability, and compression. Strong yet flexible materials ensure mobility without compromising support, helping you train harder and recover faster.
+                            {t('aboutText')}
                         </p>
-                        <button className="main-button">See more</button>
+                        <Link style={{maxWidth: lng === "en" ? "215px" : "265px"}} to={`/${lng}/product`} className="main-button">{t('aboutButton')}</Link>
                     </div>
                 </div>
             </div>

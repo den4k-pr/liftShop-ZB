@@ -2,13 +2,18 @@ import { useDispatch } from "react-redux";
 import { Options } from "./Options"
 import { addItem } from "../../redux/slices/cartSlice";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React from 'react'
+import { useTranslation } from "react-i18next";
+import { LanguageParams } from "../../templates";
 
 
 export const Navigation = () => {
     const [sizeValue, setSizeValue] = useState('')
     const dispatch = useDispatch();
+
+    const { t } = useTranslation()
+    const { lng } = useParams<LanguageParams>();
 
     const handleAddToCart = (id: string, name: string, size: string, price: number) => {
         dispatch(addItem({ id, name, size, price }));
@@ -23,7 +28,7 @@ export const Navigation = () => {
                 <p className="navigation__top-price">$1</p>
             </div>
             <div className="navigation__center">
-                <h3 className="navigation__center-title">Product Size</h3>
+                <h3 className="navigation__center-title">{t('productSize')}</h3>
                 <ul className="navigation__center-sizes">
                     {sizes.map(el =>
                         <li className={sizeValue === el ? "choosedSize" : "" } key={el} onClick={() => setSizeValue(el)}>
@@ -31,18 +36,18 @@ export const Navigation = () => {
                         </li>
                     )}
                 </ul>
-                <Link to="/cart" style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('1', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>Add to cart</Link>
+                <Link to={`/${lng}/cart`} style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('1', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>{t('productButton')}</Link>
             </div>
             <div className="navigation__bottom">
-                <span className="navigation-text">Manufactured with high grade 7mm neoprene and designed to aid performance, these knee sleeves are relied on by strength athletes around the world and are ideal for powerlifting and heavy training.</span>
+                <span className="navigation-text">{t('productText')}</span>
                 <ul className="navigation__bottom-list">
-                    <li>Sold as a pair.</li>
-                    <li>IPF approved and IWF compliant with the maximum allowable 30cm length.</li>
-                    <li>7mm high grade neoprene for maximal support.</li>
-                    <li>Reinforced seam construction to maximise longevity.</li>
-                    <li>Antimicrobial treatment minimises the build-up of bacteria and reduces odour.</li>
-                    <li>Patented design.</li>
-                    <li>Manufactured in Great Britain.</li>
+                    <li>{t('productLi1')}</li>
+                    <li>{t('productLi2')}</li>
+                    <li>{t('productLi3')}</li>
+                    <li>{t('productLi4')}</li>
+                    <li>{t('productLi5')}</li>
+                    <li>{t('productLi6')}</li>
+                    <li>{t('productLi7')}</li>
                 </ul>
                 <Options />
             </div>
