@@ -12,9 +12,9 @@ export const Features = () => {
                 <div className="features__row-black ring-one">
                     <AnimationSwapBlock position={-100}>
                         <div className="features__row-black-info">
-                            <h2 className="second-title">{t('featuresTitle1')}</h2>
-                            <p className="second-subTitle">{t('featuresSubTitle1')}</p>
-                            <span className="main-text">{t('featuresText1')}</span>
+                            <h2 className="second-title">{t('featuresTitle1').toString()}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle1').toString()}</p>
+                            <span className="main-text">{t('featuresText1').toString()}</span>
                         </div>
                     </AnimationSwapBlock>
                 </div>
@@ -29,9 +29,9 @@ export const Features = () => {
                 <div className="features__row-black ring-two">
                     <AnimationSwapBlock position={100}>
                         <div className="features__row-black-info">
-                            <h2 className="second-title">{t('featuresTitle2')}</h2>
-                            <p className="second-subTitle">{t('featuresSubTitle2')}</p>
-                            <span className="main-text">{t('featuresText2')}</span>
+                            <h2 className="second-title">{t('featuresTitle2').toString()}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle2').toString()}</p>
+                            <span className="main-text">{t('featuresText2').toString()}</span>
                         </div>
                     </AnimationSwapBlock>
                 </div>
@@ -40,9 +40,9 @@ export const Features = () => {
                 <div className="features__row-black ring-three">
                     <AnimationSwapBlock position={-100}>
                         <div className="features__row-black-info">
-                            <h2 className="second-title">{t('featuresTitle3')}</h2>
-                            <p className="second-subTitle">{t('featuresSubTitle2')}</p>
-                            <span className="main-text">{t('featuresText3')}</span>
+                            <h2 className="second-title">{t('featuresTitle3').toString()}</h2>
+                            <p className="second-subTitle">{t('featuresSubTitle2').toString()}</p>
+                            <span className="main-text">{t('featuresText3').toString()}</span>
                         </div>
                     </AnimationSwapBlock>
                 </div>

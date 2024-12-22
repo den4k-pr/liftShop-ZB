@@ -16,12 +16,12 @@ export const Cart = () => {
     return (
         <Layout>
             <div className="cart">
-                <h2 className="cart-title">{t('cartTitle')}</h2>
+                <h2 className="cart-title">{t('cartTitle').toString()}</h2>
                 <div className="cart__wrapper container">
                     {cart.length === 0 ? 
                     <div className="cart__wrapper-blankList">
-                        <p>{t('cartSubTitle')}</p>
-                        <Link to={`/${lng}/product`}>{t('cartReturn')}</Link>
+                        <p>{t('cartSubTitle').toString()}</p>
+                        <Link to={`/${lng}/product`}>{t('cartReturn').toString()}</Link>
                     </div>
                     :
                     <>

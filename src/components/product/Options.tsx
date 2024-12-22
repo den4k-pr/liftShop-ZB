@@ -33,7 +33,7 @@ export const Options = () => {
     return(
         <div className="navigation__options">
             <div className={`navigation__options-button ${options.one ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "one" })}>{t('option1')}</p>
+                <p onClick={() => handleClick({ el: "one" })}>{t('option1').toString()}</p>
                 <img style={{transform: options.one ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <table>
@@ -57,20 +57,20 @@ export const Options = () => {
                 </div>
             </div>
             <div className={`navigation__options-button ${options.two ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "two" })}>{t('option2')}</p>
+                <p onClick={() => handleClick({ el: "two" })}>{t('option2').toString()}</p>
                 <img style={{transform: options.two ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <span>
-                        {t('option2Text')}
+                        {t('option2Text').toString()}
                     </span>
                 </div>
             </div>
             <div className={`navigation__options-button ${lng === "ua" ? "optionUa" : ""} ${options.three ? "activeOption" : ""}`}>
-                <p onClick={() => handleClick({ el: "three" })}>{t('option3')}</p>
+                <p onClick={() => handleClick({ el: "three" })}>{t('option3').toString()}</p>
                 <img style={{transform: options.three ? "rotate(90deg)" : "rotate(-90deg)"}} className="button-arrow" src="../images/arrow.png" alt="" />
                 <div className="button__content">
                     <span>
-                        {t('option3Text')}
+                        {t('option3Text').toString()}
                     </span>
                 </div>
             </div>

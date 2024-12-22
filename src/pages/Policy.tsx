@@ -9,34 +9,34 @@ export const Policy = () => {
   return (
     <Layout>
     <div className="policy container">
-      <h2 className="second-title">{t('privacyTitle')}</h2>
+      <h2 className="second-title">{t('privacyTitle').toString()}</h2>
       <span className="main-text">
-      {t('privacyIntro')}
+      {t('privacyIntro').toString()}
       </span>
 
-      <h2 className="second-title">{t('dataCollection')}</h2>
+      <h2 className="second-title">{t('dataCollection').toString()}</h2>
       <span className="main-text">
-        {t('dataCollectionText')}
+        {t('dataCollectionText').toString()}
       </span>
 
-      <h2 className="second-title">{t('stripeIntegration')}</h2>
+      <h2 className="second-title">{t('stripeIntegration').toString()}</h2>
       <span className="main-text">
-      {t('stripeText')}
+      {t('stripeText').toString()}
       </span>
 
-      <h2 className="second-title">{t('yourRights')}</h2>
+      <h2 className="second-title">{t('yourRights').toString()}</h2>
       <span className="main-text">
-      {t('yourRightsText')}
+      {t('yourRightsText').toString()}
       </span>
 
-      <h2 className="second-title">{t('changesToPrivacy')}</h2>
+      <h2 className="second-title">{t('changesToPrivacy').toString()}</h2>
       <span className="main-text">
-      {t('changesText')}
+      {t('changesText').toString()}
       </span>
 
-      <h2 className="second-title">{t('contactUs')}</h2>
+      <h2 className="second-title">{t('contactUs').toString()}</h2>
       <span className="main-text">
-      {t('contactInfo')}
+      {t('contactInfo').toString()}
         <br/>
         Email: email
         <br/>

@@ -10,7 +10,7 @@ export const Footer = () => {
 
     return(
         <footer className="footer">
-            <Link to={`/${lng}/privacy-policy`}>© 2024 LiftOff ZB. {t('footer')}</Link>
+            <Link to={`/${lng}/privacy-policy`}>© 2024 LiftOff ZB. {t('footer').toString()}</Link>
         </footer>
     )
 }

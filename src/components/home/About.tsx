@@ -36,11 +36,11 @@ export const About = () => {
                 </div>
                 <div className="about__content-info">
                     <div className="info-body">
-                        <h2 className="second-title">{t('aboutTitle')}</h2>
+                        <h2 className="second-title">{t('aboutTitle').toString()}</h2>
                         <p className="main-text">
-                            {t('aboutText')}
+                            {t('aboutText').toString()}
                         </p>
-                        <Link style={{maxWidth: lng === "en" ? "215px" : "265px"}} to={`/${lng}/product`} className="main-button">{t('aboutButton')}</Link>
+                        <Link style={{maxWidth: lng === "en" ? "215px" : "265px"}} to={`/${lng}/product`} className="main-button">{t('aboutButton').toString()}</Link>
                     </div>
                 </div>
             </div>

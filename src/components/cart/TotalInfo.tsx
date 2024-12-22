@@ -46,11 +46,11 @@ export const TotalInfo = () => {
     return (
         <section className="totalInfo">
             <div className="totalInfo-amount">
-                <h4>{t('cartInfoTitle')}</h4>
+                <h4>{t('cartInfoTitle').toString()}</h4>
                 <span className="price">${totalPrice}</span>
             </div>
-            <button className={`totalInfo-checkOut ${cart.length === 0 ? "disabledButton" : ""}`} onClick={handleCheckout}>{t('cartSend')}</button>
-            <span className="totalInfo-text">{t('cartInfoText')}</span>
+            <button className={`totalInfo-checkOut ${cart.length === 0 ? "disabledButton" : ""}`} onClick={handleCheckout}>{t('cartSend').toString()}</button>
+            <span className="totalInfo-text">{t('cartInfoText').toString()}</span>
         </section>
     );
 };

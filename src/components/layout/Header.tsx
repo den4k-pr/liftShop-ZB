@@ -36,13 +36,13 @@ export const Header = () => {
                     </button>
                     <ul className="burger__menu" style={{top: burgerState ? "0" : "-150%", visibility: burgerState ? "visible" : "hidden", opacity: burgerState ? 1 : 0}}>
                         <li>
-                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/`}>{t('link1')}</Link>
+                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/`}>{t('link1').toString()}</Link>
                         </li>
                         <li>
-                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/product`}>{t('link2')}</Link>
+                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/product`}>{t('link2').toString()}</Link>
                         </li>
                         <li>
-                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/privacy-policy`}>{t('link3')}</Link>
+                            <Link onClick={() => setBurgerState(false)} className="burger__menu-link" to={`/${lng}/privacy-policy`}>{t('link3').toString()}</Link>
                         </li>
                         <li>
                             <Link className="burger__menu-linkImg" to="https://www.instagram.com/zalevskiib17/">

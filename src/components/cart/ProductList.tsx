@@ -32,13 +32,13 @@ export const ProductList = () => {
                     <img className="productList-item-image" src="../images/galery/image-1.png" alt="" />
                     <nav className="productList-item__info">
                         <h3 className="productList-item__info-name">{item.name}</h3>
-                        <p className="productList-item__info-size">{t('cartItemSize')}: <span>{item.size}</span></p>
+                        <p className="productList-item__info-size">{t('cartItemSize').toString()}: <span>{item.size}</span></p>
                         <nav className="productList-item__info-count">
                             <button onClick={() => handleDecrement(item.id, item.size)} className="count-button">-</button>
                                 <span className="count">{item.quantity}</span>
                             <button onClick={() => handleIncrement(item.id, item.size)} className="count-button">+</button>
                         </nav>
-                        <button onClick={() => handleRemove(item.id, item.size)} className="productList-item__info-remove">{t('cartItemRemove')}</button>
+                        <button onClick={() => handleRemove(item.id, item.size)} className="productList-item__info-remove">{t('cartItemRemove').toString()}</button>
                     </nav>
                 </div>
                 <span className="price">${item.totalPrice}</span>

@@ -28,7 +28,7 @@ export const Navigation = () => {
                 <p className="navigation__top-price">$1</p>
             </div>
             <div className="navigation__center">
-                <h3 className="navigation__center-title">{t('productSize')}</h3>
+                <h3 className="navigation__center-title">{t('productSize').toString()}</h3>
                 <ul className="navigation__center-sizes">
                     {sizes.map(el =>
                         <li className={sizeValue === el ? "choosedSize" : "" } key={el} onClick={() => setSizeValue(el)}>
@@ -36,18 +36,18 @@ export const Navigation = () => {
                         </li>
                     )}
                 </ul>
-                <Link to={`/${lng}/cart`} style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('1', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>{t('productButton')}</Link>
+                <Link to={`/${lng}/cart`} style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('1', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>{t('productButton').toString()}</Link>
             </div>
             <div className="navigation__bottom">
-                <span className="navigation-text">{t('productText')}</span>
+                <span className="navigation-text">{t('productText').toString()}</span>
                 <ul className="navigation__bottom-list">
-                    <li>{t('productLi1')}</li>
-                    <li>{t('productLi2')}</li>
-                    <li>{t('productLi3')}</li>
-                    <li>{t('productLi4')}</li>
-                    <li>{t('productLi5')}</li>
-                    <li>{t('productLi6')}</li>
-                    <li>{t('productLi7')}</li>
+                    <li>{t('productLi1').toString()}</li>
+                    <li>{t('productLi2').toString()}</li>
+                    <li>{t('productLi3').toString()}</li>
+                    <li>{t('productLi4').toString()}</li>
+                    <li>{t('productLi5').toString()}</li>
+                    <li>{t('productLi6').toString()}</li>
+                    <li>{t('productLi7').toString()}</li>
                 </ul>
                 <Options />
             </div>

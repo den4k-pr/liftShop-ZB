@@ -15,20 +15,20 @@ export const Greeting =() => {
             <div className="greeting__content container">
                 <div className="greeting__content-info">
                     <div className="greeting__content-info-top">
-                        <span className="underTitle">{t('underTitle')}</span>
+                        <span className="underTitle">{t('underTitle').toString()}</span>
                         <h1 className={`title ${lng === "ua" ? "uaTitle" : ""}`}>
-                            {t('title')}
+                            {t('title').toString()}
                         </h1>
                         <p className="subTitle">
-                            {t('subTitle')}
+                            {t('subTitle').toString()}
                         </p>
                     </div>
                     <div className="greeting__content-info-bottom">
                         <span className="greeting-text">
-                            {t('greetingText')}
+                            {t('greetingText').toString()}
                         </span>
                         <Link style={{maxWidth: lng === "ua" ? "275px" : "210px"}} to={`/${lng}/product`} className="greeting-button">
-                            {t('greetingButton')}
+                            {t('greetingButton').toString()}
                         </Link>
                     </div>
                 </div>
