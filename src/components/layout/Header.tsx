@@ -73,7 +73,7 @@ export const Header = () => {
                     <ul ref={ref} style={{transform: isShow ? "translateY(0)" : "translateY(-100%)", visibility: isShow ? "visible" : "hidden", opacity: isShow ? 1 : 0}} className="languageButtons__list">
                         {['ua', 'pl', 'en'].filter(el => el !== language).map(el =>
                             <li onClick={() => hendleChangeLang(el)} className="languageButtons__list-link">
-                                <span>{el.toUpperCase()}</span><img style={{transform: el === "en" ? "scale(0.9)" : "initial"}} src={`../images/languages/${el.toUpperCase()}.png`} alt="" />
+                                <span>{el.toUpperCase()}</span><img style={{transform: el === "en" ? "scale(0.9)" : "initial"}} src={`../images/languages/${el}.png`} alt="" />
                             </li>
                     )}
                     </ul>
