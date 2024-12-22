@@ -24,7 +24,7 @@ export const TotalInfo = () => {
       const handleCheckout = async () => {
         const stripe = await stripePromise;
     
-        const response = await fetch("http://localhost:3000/api/checkout", {
+        const response = await fetch("https://lify-shop-server.vercel.app/api/checkout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
