@@ -1,0 +1,40 @@
+@keyframes tada {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      bottom: 1px;
+    }
+    20% {
+      bottom: -1px;
+    }
+    30% {
+      bottom: 1px;
+    }
+    40% {
+      bottom: -1px;
+    }
+    50% {
+      bottom: 1px;
+    }
+    60% {
+        bottom: 0;
+    }
+    70% {
+        bottom: 0;
+    }
+    80% {
+        bottom: 0;
+    }
+    90% {
+      bottom: 0;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .animate-tada {
+    animation: tada 2s ease infinite;
+  }
+  
