@@ -68,10 +68,10 @@
         }
 
         &-image{
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
             margin: 0 auto;
-
+            opacity: .8;
         }
     }
 
@@ -107,13 +107,14 @@
         position: absolute;
         padding: 3px;
         z-index: 3;
-        top: -30px;
+        top: -200px;
         left: 50%;
         transform: rotate(-1deg) translate(-50%, -50%);
 
         &-list{
             display: flex;
             align-items: center;
+            animation: moveLine 700s ease infinite;
 
             li{
                 color: #fefefe;
@@ -185,6 +186,17 @@
     }
 }
 
+@keyframes moveLine {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(30%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 
 
 .features{
@@ -520,7 +532,7 @@
         background-size: cover;
 
         &-info{
-            padding: 100px 15px 50px 15px;
+            padding: 150px 15px 100px 15px;
             clip-path: polygon(0% 0, 100% 10%, 100% 100%, 0 100%);
 
             .main-button{
@@ -542,8 +554,9 @@
             position: absolute;
             z-index: 1;
             left: 50%;
-            top: 50%;
+            top: 30%;
             transform: translate(-50%, -50%);
+            opacity: .8;
         }
     }
 }
@@ -727,8 +740,16 @@
 
 
 @media(max-width: 720px) {
+    .about__line{
+        top: -420px;
+        transform: rotate(-3deg) translate(-50%, -50%);
+    }
+    .about__line-list li{
+        font-size: 12px;
+    }
     .about__content{
-        background-size: cover;
+        background-size: 840px;
+        background-position-y: -150px;
     }
     .cart-title{
         font-size: 42px;
@@ -799,9 +820,13 @@
     .greeting__content{
         align-items: initial;
         display: block;
-        padding: 300px 15px 100px 15px !important;
+        padding: 0 15px !important;
+        position: relative;
     }
     .greeting__content-info{
+        position: absolute;
+        bottom: 100px;
+        left: 0;
         gap: 50px;
         margin: 0 auto;
         text-align: center;
@@ -844,10 +869,10 @@
         flex-direction: column;
 
         &-black{
-            padding: 60px 15px;
+            padding: 120px 15px;
         }
         &-white{
-            min-height: 50vh;
+            min-height: 60vh;
         }
     }
 }

@@ -17,6 +17,10 @@ export const About = () => {
         "Perfect Fit Design",
     ]
 
+    const repeatedSentences = Array(10) // Масив із 10 елементів
+    .fill(arrowOfSentences) // Повторюємо початковий масив 10 разів
+    .flat();
+
     const { t } = useTranslation();
     const { lng } = useParams<LanguageParams>();
 
@@ -25,7 +29,7 @@ export const About = () => {
 
             <div className="about__line">
                 <ul className="about__line-list">
-                    {arrowOfSentences.map((text, index) => (
+                    {repeatedSentences.map((text, index) => (
                         <li key={index}>{text}</li>
                     ))}
                 </ul>
