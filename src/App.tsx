@@ -37,21 +37,15 @@ const LanguageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // Хук для додавання мови на початок шляху
 const RedirectToLanguage: React.FC = () => {
   const location = useLocation();
-  const currentPath = location.pathname;
 
-  React.useEffect(() => {
-    // Перевірка чи шлях не починається з /en, /pl, або /ua
-    if (!/^\/(en|pl|ua)\//.test(currentPath)) {
-      // Якщо ні, редіректимо на /en
-      window.location.replace(`/en${currentPath}`);
-    } else if (/^\/(en|pl|ua)\/(en|pl|ua)\//.test(currentPath)) {
-      // Якщо шлях починається з /en/en, /pl/pl або /ua/ua, видаляємо дубльований префікс
-      const cleanedPath = currentPath.replace(/^\/(en|pl|ua)\//, "/$1");
-      window.location.replace(cleanedPath);
+  useEffect(() => {
+    if (location.pathname === '/') {
+      // Redirect to the default language, e.g., English
+      window.location.replace('/en/');
     }
-  }, [currentPath]);
+  }, [location.pathname]);
 
-  return null; // Не потрібно нічого відображати
+  return null; // The component doesn't render anything
 };
 
 const App: React.FC = () => {
