@@ -25,7 +25,7 @@ export const Navigation = () => {
         <section className="navigation">
             <div className="navigation__top">
                 <h2 className="navigation__top-title">Knee Sleeves</h2>
-                <p className="navigation__top-price">$1</p>
+                <p className="navigation__top-price">$69.99</p>
             </div>
             <div className="navigation__center">
                 <h3 className="navigation__center-title">{t('productSize').toString()}</h3>
@@ -36,7 +36,7 @@ export const Navigation = () => {
                         </li>
                     )}
                 </ul>
-                <Link to={`/${lng}/cart`} style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('1', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>{t('productButton').toString()}</Link>
+                <Link to={`/${lng}/cart`} style={{display: "block", color: "#272727"}} onClick={() => handleAddToCart('69.99', 'Knee Sleeves', sizeValue, 1)} className={`navigation__center-addToCart ${sizeValue === "" && "disabledButton"}`}>{t('productButton').toString()}</Link>
             </div>
             <div className="navigation__bottom">
                 <span className="navigation-text">{t('productText').toString()}</span>
